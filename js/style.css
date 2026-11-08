@@ -1,0 +1,280 @@
+.mg-manager,.mg-dialog{font:13px system-ui,sans-serif;color:#e7e9ef;background:#20232c;border:1px solid #4a4e5c;box-shadow:0 8px 30px #0006;box-sizing:border-box;z-index:1100}.mg-manager{width:620px;max-width:90vw;height:600px;max-height:85vh;padding:0;overflow:hidden;display:flex;flex-direction:column;border-radius:12px}.mg-manager[hidden]{display:none!important}.mg-manager::backdrop{background:#0008}.mg-header,.mg-tools,.mg-footer,.mg-row,.mg-nav{display:flex;align-items:center;gap:6px;padding:8px}.mg-header{justify-content:space-between;border-bottom:1px solid #3b3f4a}.mg-button{font:inherit;color:inherit;border:1px solid #454a59;background:#2c303c;border-radius:6px;cursor:pointer;padding:6px 8px;white-space:nowrap}.mg-button:hover{background:#3a4051}.mg-button:focus-visible,.mg-search:focus-visible{outline:2px solid #9bbaff;outline-offset:1px}.mg-search{min-width:0;flex:1;width:100%;box-sizing:border-box;font:inherit;padding:8px;color:#eee;background:#171a22;border:1px solid #454a59;border-radius:6px}.mg-status,.mg-notice{padding:5px 10px;color:#b8c0d0;font-size:12px}.mg-list{flex:1;min-height:60px;overflow:auto;padding:6px}.mg-card{border:1px solid #404451;border-left:4px solid var(--mg-color);border-radius:7px;margin-bottom:7px;background:#252934}.mg-active{border-color:var(--mg-color);background:#303648}.mg-row{padding:6px;gap:4px}.mg-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;text-align:left;border:0;background:transparent}.mg-count{font-size:12px;color:#bfc8d6}.mg-row>.mg-button:not(.mg-name){padding:5px}.mg-members{position:relative;overflow:auto;border-top:1px solid #3b3f4a}.mg-spacer{position:relative}.mg-member{position:absolute;left:6px;right:6px;height:32px;overflow:hidden;text-overflow:ellipsis;text-align:left}.mg-nav{padding:4px 7px;justify-content:space-between}.mg-footer{flex-wrap:wrap;border-top:1px solid #3b3f4a}.mg-on{border-color:#b794f4;background:#59417f}.mg-dialog{border-radius:12px;min-width:300px;max-width:90vw;padding:18px;z-index:1200}.mg-dialog::backdrop{background:#0008}.mg-dialog>button{display:block;margin-top:8px;width:100%;text-align:left}.mg-dialog h3{margin:0 0 14px}.mg-picker{display:flex;flex-direction:column;gap:6px;max-height:50vh;overflow:auto;margin-top:12px}.mg-empty{padding:12px;line-height:1.5;color:#bdc5d5}
+.mg-compact{position:fixed;z-index:1100;width:300px;max-width:calc(100vw - 12px);padding:6px;background:#20232cf2;color:#e7e9ef;border:1px solid #4a4e5c;border-radius:9px;box-shadow:0 5px 18px #0005;font:12px system-ui,sans-serif;box-sizing:border-box}.mg-compact[hidden]{display:none!important}.mg-compact-row{display:flex;align-items:center;gap:4px;margin-bottom:4px}.mg-compact .mg-button{min-width:29px;height:28px;padding:3px 5px;font-size:15px;line-height:1}.mg-drag{cursor:grab;touch-action:none;padding:4px;font-size:18px;user-select:none}.mg-bundle-select{min-width:0;flex:1;background:#171a22;color:#eee;border:1px solid #454a59;border-radius:5px;padding:5px;font:inherit}.mg-scale{display:flex;align-items:center;gap:7px;padding:0 4px}.mg-scale input{flex:1;min-width:0;height:18px;accent-color:#b794f4}.mg-scale output{font-variant-numeric:tabular-nums;min-width:36px;text-align:right}.mg-compact :focus-visible{outline:2px solid #9bbaff;outline-offset:1px}
+.mg-compact .mg-extra{justify-content:flex-end}.mg-compact{width:164px}.mg-compact>.mg-compact-row:first-child{flex-wrap:wrap}.mg-compact .mg-bundle-select{flex-basis:100%;order:2}.mg-compact>.mg-extra{justify-content:center;flex-wrap:wrap}.mg-summary{height:auto;min-height:0;max-height:none;overflow:visible;border-top:1px solid #454a59;margin:5px 0;padding-top:5px}.mg-summary[hidden]{display:none}.mg-summary-row:last-child{margin-bottom:0}.mg-summary-row{display:flex;align-items:center;gap:5px;margin-bottom:4px;border-left:3px solid var(--mg-color);padding-left:4px}.mg-summary-name{flex:1;min-width:0;text-align:left;overflow:hidden;text-overflow:ellipsis;font-size:12px!important}.mg-summary-state{font-size:10px;white-space:nowrap;color:#bfc8d6}.mg-compact .mg-summary-row{flex-wrap:nowrap}.mg-compact .mg-summary-name{flex-basis:auto}.mg-compact .mg-summary-state{flex:0 0 12px}.mg-compact{max-height:calc(100vh - 12px);overflow:auto}
+
+.mg-compact .mg-reload{background:#123b85;border-color:#245bc1;color:#fff}.mg-compact .mg-reload:hover{background:#184da8}
+
+.mg-summary-state{display:inline-block;flex:0 0 12px;width:12px;height:18px;padding:0;border-radius:4px}.mg-summary-state[data-state="enabled"]{background:#185632;color:#e8fff0}.mg-summary-state[data-state="bypassed"]{background:#713caf;color:#f5edff}.mg-summary-state[data-state="mixed"]{background:#765018;color:#fff5db}.mg-summary-state[data-state="empty"]{background:#414754;color:#edf0f5}
+/* Position uses viewport pixels; only the contents are scaled. */
+.mg-compact{width:370px;transform-origin:top left;transition:none!important;animation:none!important}.mg-compact{width:240px}.mg-compact .mg-extra{justify-content:space-between}.mg-compact.mg-collapsed>:not(.mg-top){display:none!important}.mg-top{flex-shrink:0}.mg-settings{padding:8px;margin:4px 0;border:1px solid var(--mg-border,#454a59);border-radius:6px}.mg-settings[hidden]{display:none}.mg-settings label{display:flex;align-items:center;gap:8px}.mg-settings select{flex:1}
+[data-theme="obsidian"]{--mg-bg:#20232c;--mg-fg:#e7e9ef;--mg-button:#2c303c;--mg-hover:#3a4051;--mg-border:#454a59;--mg-field:#171a22;--mg-muted:#bfc8d6;--mg-card:#252934;--mg-active:#303648}
+[data-theme="midnight"]{--mg-bg:#101d35;--mg-fg:#e6efff;--mg-button:#1c3155;--mg-hover:#2b4673;--mg-border:#425d88;--mg-field:#0b162a;--mg-muted:#aac0e4;--mg-card:#182945;--mg-active:#254268}
+[data-theme="paper"]{--mg-bg:#f3f1eb;--mg-fg:#202733;--mg-button:#e3e0d8;--mg-hover:#d2cfc5;--mg-border:#aaa69a;--mg-field:#ffffff;--mg-muted:#515b68;--mg-card:#eeebe2;--mg-active:#d5e2ed}
+[data-theme="forest"]{--mg-bg:#172c25;--mg-fg:#e6f3e9;--mg-button:#254337;--mg-hover:#345c49;--mg-border:#557665;--mg-field:#102019;--mg-muted:#b1cbbc;--mg-card:#1d372b;--mg-active:#30513e}
+.mg-compact,.mg-manager,.mg-dialog{background:var(--mg-bg,#20232c);color:var(--mg-fg,#e7e9ef);border-color:var(--mg-border,#454a59)}.mg-compact .mg-button,.mg-manager .mg-button,.mg-dialog .mg-button{background:var(--mg-button,#2c303c);color:var(--mg-fg,#e7e9ef);border-color:var(--mg-border,#454a59)}.mg-button:hover{background:var(--mg-hover,#3a4051)}.mg-bundle-select,.mg-search{background:var(--mg-field,#171a22);color:var(--mg-fg,#e7e9ef);border-color:var(--mg-border,#454a59)}.mg-summary-state,.mg-status,.mg-notice,.mg-count,.mg-empty{color:var(--mg-muted,#bfc8d6)}.mg-card{background:var(--mg-card,#252934)}.mg-active{background:var(--mg-active,#303648)}.mg-compact .mg-reload{background:#123b85;color:#fff;border-color:#245bc1}.mg-compact .mg-reload:hover{background:#184da8}.mg-compact .mg-on{background:#59417f;color:#fff;border-color:#b794f4}
+
+.mg-compact.mg-collapsed .mg-bundle-select{display:none!important}
+
+.mg-compact{width:440px}.mg-compact .mg-reload,.mg-compact .mg-clear-queue{width:58px;min-width:58px;height:56px;flex:0 0 58px;font-size:30px;padding:6px}.mg-compact .mg-clear-queue{margin-left:auto;background:#a4212b;border-color:#d34650;color:#fff}.mg-compact .mg-clear-queue:hover{background:#c42b38}.mg-compact .mg-clear-queue:disabled{opacity:.55;cursor:wait}.mg-compact .mg-reload{margin-left:0}
+
+.mg-compact .mg-reload,.mg-compact .mg-clear-queue{width:41px;min-width:41px;height:40px;flex-basis:41px;font-size:22px;padding:4px}.mg-compact>.mg-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))!important}.mg-compact>.mg-extra{flex-wrap:nowrap;justify-content:space-between}
+
+/* Keep the whole header on one line in either orientation. */
+.mg-compact{width:580px}.mg-compact{width:540px}.mg-compact>.mg-top{display:flex;flex-wrap:nowrap!important;align-items:center}.mg-compact .mg-top .mg-bundle-select{order:0;flex:1 1 120px;min-width:120px}.mg-compact .mg-top>.mg-button,.mg-compact .mg-top>.mg-drag{flex-shrink:0}.mg-compact .mg-top .mg-clear-queue{margin-left:auto}.mg-compact .mg-top .mg-reload{margin-left:0}
+
+.mg-compact>.mg-picker-row{display:flex}.mg-compact>.mg-picker-row .mg-bundle-select{width:100%;flex:1;order:0;min-width:0}.mg-compact>.mg-actions{display:grid!important}
+
+.mg-compact{width:262.5px}.mg-compact{width:240px}.mg-compact>.mg-picker-row{display:flex!important;width:100%}.mg-compact>.mg-picker-row .mg-bundle-select{width:100%;flex:1 1 100%}
+
+/* Toggles share spare row width, with consistent gaps to adjacent controls. */
+.mg-compact>.mg-picker-row{gap:4px}.mg-compact>.mg-picker-row .mg-bundle-select{width:auto;flex:1 1 0}.mg-compact .mg-wide-toggle{flex:1 1 0;min-width:29px}.mg-compact>.mg-extra{gap:4px}
+
+/* Clear queue fills the remaining header width in both layouts. */
+.mg-compact .mg-top .mg-clear-queue{width:auto;min-width:29px;height:28px;flex:1 1 0;margin-left:0;padding:3px 5px;font-size:15px}
+
+/* Vertical layout: two header rows and two rows per control section. */
+.mg-compact>.mg-top{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.mg-compact>.mg-top .mg-drag{text-align:center;box-sizing:border-box;height:28px}
+.mg-compact>.mg-top .mg-clear-queue{grid-column:span 2;width:auto;min-width:29px;height:28px}
+.mg-compact>.mg-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:4px}
+.mg-compact>.mg-extra{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+
+.mg-compact{width:160px}
+
+/* Name-only hover overlay lives outside the scrolling toolbar. */
+.mg-name-preview{position:fixed;z-index:1201;display:flex;align-items:center;box-sizing:border-box;width:max-content;max-width:calc(100vw - 12px);white-space:nowrap;overflow:hidden;border-radius:6px;font-family:system-ui,sans-serif;box-shadow:0 2px 8px #0005;pointer-events:none}
+
+/* Swap vertical header rows; the first stays visible when collapsed. */
+.mg-compact>.mg-top>:nth-child(5){order:1}
+.mg-compact>.mg-top>:nth-child(6){order:2}
+.mg-compact>.mg-top>:nth-child(7){order:3;grid-column:span 2}
+.mg-compact>.mg-top>:nth-child(1){order:4}
+.mg-compact>.mg-top>:nth-child(2){order:5}
+.mg-compact>.mg-top>:nth-child(3){order:6}
+.mg-compact>.mg-top>:nth-child(4){order:7}
+.mg-compact.mg-collapsed>.mg-top>:nth-child(-n+4){display:none}
+.mg-compact .mg-top .mg-reload{width:auto;min-width:29px;height:28px;flex:1 1 0;margin-left:0;padding:3px 5px;font-size:15px}
+.mg-compact .mg-picker-row .mg-clear-queue{width:58px;min-width:58px;height:56px;flex:0 0 58px;margin-left:0;font-size:30px;padding:6px}
+.mg-compact .mg-picker-row .mg-clear-queue{width:41px;min-width:41px;height:40px;flex-basis:41px;font-size:22px;padding:4px}
+
+/* Drag stays in the first header row, including when collapsed. */
+.mg-compact>.mg-top>:nth-child(1){order:0}
+.mg-compact>.mg-top>:nth-child(7){grid-column:auto}
+.mg-compact>.mg-top>:nth-child(2){grid-column:span 2}
+.mg-compact.mg-collapsed>.mg-top>:nth-child(1){display:block}
+.mg-compact .mg-picker-row .mg-clear-queue,.mg-compact .mg-picker-row .mg-clear-queue{height:28px;font-size:15px;padding:3px 5px}
+
+/* Layout toggle joins the second header row. */
+.mg-compact>.mg-top>:nth-child(6){order:8}
+.mg-compact>.mg-top>:nth-child(7){grid-column:span 2}
+.mg-compact>.mg-top>:nth-child(2){grid-column:auto}
+.mg-compact.mg-collapsed>.mg-top>:nth-child(6){display:none}
+
+/* Horizontal orientation transposes the vertical control sections. */
+.mg-compact:not(.mg-vertical){width:max-content;display:grid;grid-template-columns:64px 130px 64px 64px 130px;grid-template-rows:146px;gap:4px;align-items:start}
+.mg-compact:not(.mg-vertical)>.mg-compact-row{margin:0;width:auto!important;height:146px}
+.mg-compact:not(.mg-vertical)>.mg-top{grid-column:1;grid-row:1;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr))}
+.mg-compact:not(.mg-vertical)>.mg-top>*{order:0;grid-column:auto;grid-row:auto;height:100%}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(1){grid-column:1;grid-row:1;height:100%}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(5){grid-column:1;grid-row:2}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(7){grid-column:1;grid-row:3 / span 2;height:100%}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(2){grid-column:2;grid-row:1}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(3){grid-column:2;grid-row:2}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(4){grid-column:2;grid-row:3}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(6){grid-column:2;grid-row:4}
+.mg-compact:not(.mg-vertical)>.mg-picker-row{grid-column:2;grid-row:1;flex-direction:column;align-items:stretch}
+.mg-compact:not(.mg-vertical) .mg-picker-row .mg-clear-queue{width:100%;min-width:0;height:28px;flex:0 0 28px}
+.mg-compact:not(.mg-vertical) .mg-picker-row .mg-bundle-select{width:100%;flex:1 1 0;box-sizing:border-box}
+.mg-compact:not(.mg-vertical)>.mg-actions{grid-column:3;grid-row:1;grid-template-rows:repeat(2,minmax(0,1fr))}
+.mg-compact:not(.mg-vertical)>.mg-extra{grid-column:4;grid-row:1;grid-template-rows:repeat(2,minmax(0,1fr))}
+.mg-compact:not(.mg-vertical)>.mg-actions>:nth-child(1),.mg-compact:not(.mg-vertical)>.mg-extra>:nth-child(1){grid-column:1;grid-row:1}
+.mg-compact:not(.mg-vertical)>.mg-actions>:nth-child(2),.mg-compact:not(.mg-vertical)>.mg-extra>:nth-child(2){grid-column:1;grid-row:2}
+.mg-compact:not(.mg-vertical)>.mg-actions>:nth-child(3),.mg-compact:not(.mg-vertical)>.mg-extra>:nth-child(3){grid-column:2;grid-row:1}
+.mg-compact:not(.mg-vertical)>.mg-actions>:nth-child(4),.mg-compact:not(.mg-vertical)>.mg-extra>:nth-child(4){grid-column:2;grid-row:2}
+.mg-compact:not(.mg-vertical)>.mg-actions>.mg-button,.mg-compact:not(.mg-vertical)>.mg-extra>.mg-button{height:100%;min-width:0;padding:3px}
+.mg-compact:not(.mg-vertical)>.mg-scale{grid-column:5;grid-row:1;flex-direction:column;justify-content:center;height:146px;box-sizing:border-box}
+.mg-compact:not(.mg-vertical)>.mg-scale input{width:100%;flex:0 0 auto}
+.mg-compact:not(.mg-vertical)>.mg-settings{grid-column:1 / -1;grid-row:2}
+.mg-compact:not(.mg-vertical)>.mg-summary{grid-column:1 / -1;grid-row:3}
+.mg-compact:not(.mg-vertical).mg-collapsed{grid-template-columns:30px}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top{grid-template-columns:30px}
+
+/* Horizontal header: Hide and Layout occupy their own right-hand column. */
+.mg-compact:not(.mg-vertical){grid-template-columns:98px 130px 64px 64px 130px}
+.mg-compact:not(.mg-vertical)>.mg-top{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(4){grid-column:3;grid-row:1}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(6){grid-column:3;grid-row:2}
+.mg-compact:not(.mg-vertical).mg-collapsed{grid-template-columns:30px}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top{grid-template-columns:30px}
+
+/* Horizontal toolbar is 80px tall before scaling. */
+.mg-compact:not(.mg-vertical){grid-template-rows:66px}
+.mg-compact:not(.mg-vertical)>.mg-compact-row,.mg-compact:not(.mg-vertical)>.mg-scale{height:66px}
+.mg-compact:not(.mg-vertical)>.mg-top{grid-template-rows:repeat(4,minmax(0,1fr))}
+.mg-compact:not(.mg-vertical)>.mg-top .mg-button{padding:0 3px;font-size:12px;min-height:0}
+.mg-compact:not(.mg-vertical)>.mg-top .mg-drag{padding:0;font-size:14px;line-height:1}
+.mg-compact:not(.mg-vertical)>.mg-scale{gap:2px;padding:0 4px}
+
+/* Reclaim the header space after removing Refresh. */
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(5){grid-row:2 / span 3}
+
+.mg-compact:not(.mg-vertical)>.mg-top>.mg-reload{display:none}
+
+/* Compact 40px horizontal control strip. */
+.mg-compact:not(.mg-vertical){grid-template-rows:26px}
+.mg-compact:not(.mg-vertical)>.mg-compact-row,.mg-compact:not(.mg-vertical)>.mg-scale{height:26px}
+.mg-compact:not(.mg-vertical)>.mg-top{grid-template-rows:repeat(2,minmax(0,1fr))}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(5){grid-row:2}
+.mg-compact:not(.mg-vertical)>.mg-top .mg-button,.mg-compact:not(.mg-vertical)>.mg-actions>.mg-button,.mg-compact:not(.mg-vertical)>.mg-extra>.mg-button{padding:0 2px;font-size:10px;min-height:0}
+.mg-compact:not(.mg-vertical)>.mg-top .mg-drag{font-size:10px}
+.mg-compact:not(.mg-vertical) .mg-picker-row .mg-clear-queue{height:11px;flex:0 0 11px;font-size:10px;padding:0 2px}
+.mg-compact:not(.mg-vertical) .mg-picker-row .mg-bundle-select{height:11px;min-height:0;padding:0 2px;font-size:10px}
+.mg-compact:not(.mg-vertical)>.mg-scale{flex-direction:row;gap:4px}
+.mg-compact:not(.mg-vertical)>.mg-scale input{width:0;flex:1;min-width:0;height:18px}
+.mg-compact:not(.mg-vertical)>.mg-scale output{font-size:10px;min-width:29px}
+
+/* Add ten percent to the horizontal strip's total height. */
+.mg-compact:not(.mg-vertical){grid-template-rows:30px}
+.mg-compact:not(.mg-vertical)>.mg-compact-row,.mg-compact:not(.mg-vertical)>.mg-scale{height:30px}
+.mg-compact:not(.mg-vertical) .mg-picker-row .mg-clear-queue{height:13px;flex-basis:13px}
+.mg-compact:not(.mg-vertical) .mg-picker-row .mg-bundle-select{height:13px}
+
+/* 50px horizontal strip including padding and borders. */
+.mg-compact:not(.mg-vertical){grid-template-rows:36px}
+.mg-compact:not(.mg-vertical)>.mg-compact-row,.mg-compact:not(.mg-vertical)>.mg-scale{height:36px}
+.mg-compact:not(.mg-vertical) .mg-picker-row .mg-clear-queue{height:16px;flex-basis:16px}
+.mg-compact:not(.mg-vertical) .mg-picker-row .mg-bundle-select{height:16px}
+
+/* Consistent plus/minus node icons, independent of font glyph metrics. */
+.mg-membership-button{display:flex;align-items:center;justify-content:center;overflow:hidden}
+.mg-membership-button svg{display:block;width:24px;max-width:100%;height:100%;max-height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:square;flex-shrink:1}
+.mg-compact:not(.mg-vertical){grid-template-columns:98px 65px 64px 64px 130px}
+.mg-compact:not(.mg-vertical).mg-collapsed{grid-template-columns:30px}
+
+/* Horizontal far-right Collapse / Refresh column. */
+.mg-compact:not(.mg-vertical){grid-template-columns:98px 65px 64px 64px 130px 30px}
+.mg-end[hidden]{display:none!important}
+.mg-compact:not(.mg-vertical)>.mg-end{grid-column:6;grid-row:1;display:grid;grid-template-rows:repeat(2,minmax(0,1fr));gap:4px;height:36px}
+.mg-compact:not(.mg-vertical)>.mg-end>.mg-button{width:100%;min-width:0;height:100%;padding:0 2px;font-size:10px}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(1){grid-row:1 / span 2}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(5){grid-column:3;grid-row:2}
+.mg-compact:not(.mg-vertical).mg-collapsed{grid-template-columns:30px 30px}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-end{display:grid!important;grid-column:2}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top>:nth-child(n+2){display:none}
+
+/* Collapse/Refresh sits immediately after the drag anchor. */
+.mg-compact:not(.mg-vertical){grid-template-columns:132px 65px 64px 64px 130px}
+.mg-compact:not(.mg-vertical)>.mg-top{grid-template-columns:repeat(4,minmax(0,1fr))}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(2){grid-column:3}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(3){grid-column:3}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(4){grid-column:4}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(5){grid-column:4}
+.mg-compact:not(.mg-vertical)>.mg-end{grid-column:1;justify-self:start;margin-left:34px;width:30px;z-index:1}
+.mg-compact:not(.mg-vertical).mg-collapsed{grid-template-columns:64px}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top{grid-template-columns:30px}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-end{grid-column:1}
+
+/* Keep the collapsed drag anchor beside Collapse/Refresh. */
+.mg-compact:not(.mg-vertical).mg-collapsed{display:flex;align-items:flex-start;gap:4px;width:78px}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top{width:30px!important;flex:0 0 30px;height:36px;grid-template-columns:30px;grid-template-rows:repeat(2,minmax(0,1fr))}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top>:first-child{grid-column:1;grid-row:1 / span 2;height:100%}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-end{margin-left:0;flex:0 0 30px;width:30px;height:36px;align-self:flex-start}
+
+/* Collapsed horizontal toolbar stacks Drag above Collapse and Refresh. */
+.mg-compact:not(.mg-vertical).mg-collapsed{flex-direction:column;align-items:center;width:44px;gap:4px}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top{height:16px;flex:0 0 16px;grid-template-rows:16px}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top>:first-child{grid-row:1}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-end{flex:0 0 36px;align-self:center}
+
+/* Status popout: horizontal strip of vertical bundle cards. */
+.mg-status-popout{position:fixed;z-index:1150;display:flex;align-items:flex-start;gap:6px;width:max-content;height:auto;margin:0;padding:6px;border:1px solid var(--mg-border,#454a59);border-radius:8px;background:var(--mg-bg,#20232c);color:var(--mg-fg,#e7e9ef);font:12px system-ui,sans-serif;box-sizing:border-box;box-shadow:0 5px 18px #0005;transform-origin:top left;overflow-x:auto}
+.mg-status-popout[hidden]{display:none!important}
+.mg-status-popout .mg-summary-row{flex-direction:column;align-items:stretch;gap:5px;margin:0;padding:0;border:0;width:100px;flex:0 0 100px}
+.mg-status-popout .mg-summary-name{flex:none;height:28px;padding:3px 5px}
+.mg-status-popout .mg-summary-state{width:100%;height:8px;flex:none}
+.mg-status-popout .mg-summary-row>.mg-button{background:var(--mg-button,#2c303c);color:var(--mg-fg,#e7e9ef);border-color:var(--mg-border,#454a59)}
+.mg-status-popout.mg-vertical-text .mg-summary-row{width:36px;flex-basis:36px}
+.mg-status-popout.mg-vertical-text .mg-summary-name{writing-mode:vertical-rl;text-orientation:mixed;height:auto;max-height:200px;min-height:80px;text-align:left}
+
+.mg-status-popout{overflow:auto}
+
+.mg-status-popout .mg-bundle-drag{cursor:grab;height:18px;padding:0;font-size:14px;line-height:1}
+.mg-status-popout .mg-bundle-drag:active{cursor:grabbing}
+.mg-status-popout .mg-drop-target{outline:2px solid #b794f4;outline-offset:2px;border-radius:6px}
+
+/* Vertical status restores the inline, single-line list. */
+.mg-compact.mg-vertical .mg-summary-slot>.mg-summary{height:auto;min-height:0;max-height:none;overflow:visible;margin:5px 0;padding-top:5px}
+.mg-compact.mg-vertical .mg-summary-row>.mg-bundle-drag{display:none}
+.mg-compact.mg-vertical .mg-summary-name[draggable]{cursor:grab}
+.mg-compact.mg-vertical .mg-summary-name[draggable]:active{cursor:grabbing}
+.mg-compact.mg-vertical .mg-summary-row.mg-drop-target{outline:2px solid #b794f4;outline-offset:1px}
+
+/* Horizontal status strip uses one-quarter of its former natural width. */
+.mg-status-popout{gap:1.5px;padding-left:1.5px;padding-right:1.5px;border-left-width:.25px;border-right-width:.25px}
+.mg-status-popout .mg-summary-row{width:25px;flex-basis:25px;min-width:0}
+.mg-status-popout.mg-vertical-text .mg-summary-row{width:9px;flex-basis:9px}
+.mg-status-popout .mg-summary-row>.mg-button{min-width:0;padding-left:1px;padding-right:1px;overflow:hidden}
+
+/* Status name and bypass controls share the toolbar status-toggle design. */
+.mg-summary .mg-summary-row>.mg-status-button{box-sizing:border-box;height:var(--mg-status-button-height,28px);min-height:0;padding:var(--mg-status-button-padding,3px 5px);font-family:system-ui,sans-serif;font-size:var(--mg-status-button-font,15px)!important;line-height:1;border:1px solid var(--mg-border,#454a59);border-radius:6px;background:var(--mg-button,#2c303c);color:var(--mg-fg,#e7e9ef)}
+.mg-summary .mg-summary-row>.mg-status-button:hover{background:var(--mg-hover,#3a4051)}
+.mg-summary .mg-summary-row>.mg-status-button:focus-visible{outline:2px solid #9bbaff;outline-offset:1px}
+.mg-status-popout.mg-vertical-text .mg-summary-row>.mg-summary-name{height:auto;min-height:80px;max-height:200px}
+
+/* Horizontal status: two rows of horizontal bundle widgets. */
+.mg-status-popout{display:grid;grid-template-rows:repeat(2,max-content);grid-auto-flow:column;grid-auto-columns:130px;gap:4px;padding:6px;border-width:1px}
+.mg-status-popout .mg-summary-row,.mg-status-popout.mg-vertical-text .mg-summary-row{display:flex;flex-direction:row;align-items:center;width:130px;min-width:0;gap:3px}
+.mg-status-popout .mg-summary-row>.mg-bundle-drag{flex:0 0 14px;width:14px;height:16px;min-width:0}
+.mg-status-popout .mg-summary-row>.mg-summary-name,.mg-status-popout.mg-vertical-text .mg-summary-row>.mg-summary-name{writing-mode:horizontal-tb;text-orientation:mixed;flex:1 1 0;min-width:0;min-height:0;max-height:none;height:16px;text-align:left}
+.mg-status-popout .mg-summary-row>.mg-summary-state{flex:0 0 8px;width:8px;height:12px}
+.mg-status-popout .mg-summary-row>.mg-status-button:not(.mg-summary-name){flex:0 0 18px;width:18px}
+
+/* Reduce just the horizontal name display to one-third. */
+.mg-status-popout{grid-auto-columns:76px}
+.mg-status-popout .mg-summary-row,.mg-status-popout.mg-vertical-text .mg-summary-row{width:76px}
+.mg-status-popout .mg-summary-row>.mg-summary-name,.mg-status-popout.mg-vertical-text .mg-summary-row>.mg-summary-name{flex:0 0 27px;width:27px}
+
+/* Horizontal status is part of the toolbar, directly before Scale. */
+.mg-compact:not(.mg-vertical){grid-template-columns:132px 65px 64px 64px max-content 130px}
+.mg-summary-slot[hidden]{display:none!important}
+.mg-compact:not(.mg-vertical)>.mg-summary-slot{grid-column:5;grid-row:1;align-self:center}
+.mg-compact:not(.mg-vertical)>.mg-scale{grid-column:6}
+.mg-compact:not(.mg-vertical) .mg-status-inline{position:static;transform:none;z-index:auto;margin:0;padding:0 4px;border:0;border-left:1px solid var(--mg-border,#454a59);border-right:1px solid var(--mg-border,#454a59);border-radius:0;box-shadow:none;background:transparent;overflow:visible;gap:4px}
+.mg-compact:not(.mg-vertical).mg-collapsed{display:flex;width:44px}
+
+.mg-compact:not(.mg-vertical):has(>.mg-summary-slot[hidden]){grid-template-columns:132px 65px 64px 64px 130px}
+.mg-compact:not(.mg-vertical):has(>.mg-summary-slot[hidden])>.mg-scale{grid-column:5}
+
+/* Visible-status feedback and header placement without Hide Toolbar. */
+.mg-compact .mg-status-visible{outline:1px solid #dbe7ff;outline-offset:1px}
+.mg-compact.mg-vertical>.mg-top>*{order:0;grid-column:auto;grid-row:auto}
+.mg-compact.mg-vertical>.mg-top>:nth-child(1){grid-column:1;grid-row:1}
+.mg-compact.mg-vertical>.mg-top>:nth-child(4){grid-column:2;grid-row:1}
+.mg-compact.mg-vertical>.mg-top>:nth-child(6){grid-column:3 / span 2;grid-row:1}
+.mg-compact.mg-vertical>.mg-top>:nth-child(2){grid-column:1;grid-row:2}
+.mg-compact.mg-vertical>.mg-top>:nth-child(3){grid-column:2;grid-row:2}
+.mg-compact.mg-vertical>.mg-top>:nth-child(5){grid-column:3 / span 2;grid-row:2}
+.mg-compact.mg-vertical.mg-collapsed>.mg-top>:nth-child(4){display:block}
+.mg-compact.mg-vertical.mg-collapsed>.mg-top>:nth-child(6){display:block}
+.mg-compact.mg-vertical.mg-collapsed>.mg-top>:nth-child(5){display:none}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(4){grid-column:4;grid-row:1 / span 2}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top>:nth-child(n+2){display:none}
+
+/* Horizontal Drag/Collapse followed by Layout/Refresh. */
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(1){grid-row:1}
+.mg-compact:not(.mg-vertical)>.mg-top>:nth-child(4){grid-column:1;grid-row:2}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top{height:36px;flex-basis:36px;grid-template-rows:repeat(2,minmax(0,1fr))}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top>:nth-child(1){grid-row:1}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top>:nth-child(4){display:block;grid-column:1;grid-row:2}
+.mg-compact.mg-vertical{width:106.6667px}
+
+.mg-compact.mg-vertical>.mg-top>.mg-button{min-width:0;width:100%;box-sizing:border-box;padding:3px 2px}
+
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-end>:first-child{display:none}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-end{grid-template-rows:1fr;height:16px;flex-basis:16px}
+
+/* Remove the unused fourth header column in horizontal mode. */
+.mg-compact:not(.mg-vertical){grid-template-columns:98px 65px 64px 64px max-content 130px}
+.mg-compact:not(.mg-vertical):has(>.mg-summary-slot[hidden]){grid-template-columns:98px 65px 64px 64px 130px}
+.mg-compact:not(.mg-vertical)>.mg-top{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mg-compact:not(.mg-vertical).mg-collapsed>.mg-top{grid-template-columns:30px}
